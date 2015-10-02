@@ -1,0 +1,16 @@
+XML-------------->DOM----------------->AST------------------>évaluer ou compiler selon l'objectif
+       Jing             PARSER(Factory)              
+
+Grammaire
+
+Savoir intervenir quand on veut introduire une chose.
+
+WholeTestSuite.java : Sert à effectuer tous les tests existants et compiler tous les sources du projet.
+InterpreterTest.java : Sert à exécuter les programmes ILP se trouvant dans le dossier Samples.
+Jing : Sert à valider un fichier XML par rapport aux schémas RelaxNG utilisés pour définir les grammaires de langages. (Clic droit fichier XML > menu ILP > Validate)
+
+
+ATTENTION !!! TOUT METTRE DANS LE WORKSPACE POUR L'EXAMEN (Projets, Différentes Versions de ILP, PDFs, Notes, etc)
+
+
+

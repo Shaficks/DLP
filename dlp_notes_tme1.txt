@@ -1,0 +1,56 @@
+* Etapes d'ajout d'une nouvelle fonctionnalité :
+1 - écrire grammaire dans un fichier .rnc avec lequel on peut normalement générer un rng qui est écrit en XML (Le fichier rng représente la grammaire sous forme d'arbre et sera par la sui)
+    (Le fichier rng représente la grammaire sous forme d'arbre et sera par la suite rectifié en DOM une fois validé par la DTD(étape 2))
+2 - Valider la grammaire en utilisant la DTD (Document Type Definition).
+3 - Une fois la grammaire validée, le programme sera rectifié en DOM (Document Object Model).
+4 - Transformer le DOM en AST (Abstract Syntax Tree). Cette transformation devrait générer les classes et interfaces (AST et IAST) correspondant à la fonctionnalité qu'on veut rajouter.
+    Les fichiers créés contiennent normalement les squelettes (code source) du départ ... À vérifier ...
+5 - Une fois les différentes fonctionnalités implémentées, optimisées et validées par le parseur et l'interprêteur, il faut traduire le programme en C afin
+    de se servir du GCC pour la compilation et l'interpréter par la suite.
+6 - Waiting for more updates ...
+   
+
+
+*) Samples :
+Le dossier Samples contient des exemples de programmes ILP; Un programme ILP est constitué de 3 fichiers, un prog_x.xml qui contient le code source,
+un prog_x.result qui contient le résultat/la valeur attendu(e) et un .print qui contient la valeur à imprimer dans la console lors de l'exécution.
+P.S : Si le programme à plusieurs valeurs et prints, il faut mettre dans le fichier .restult le dernier résultat du fichier ou false(Qui passe mieux). 
+Les fichiers .result et .print serviront dans les tests JUnit, leurs contenus seront comparés aux résultats de l'exécution afin de déterminer
+si un programme s'exécute correctement ou pas.
+À l'issue de l'exécution d'un programme ILP, un fichier prog_x.c est généré automatiquement.
+
+*) Méthode processFile - Classe InterpreterTest - Paquage com.paracamplus.ilp1.interpreter.test :
+Cette méthode interprète un programme ILP l'exécute et vérifie ensuite son résultat et ce qu'il a imprimé. Elle commence bien évidemment par parser
+le fichier grammaire (grammar1.rng) afin de se baser dessus, ensuite il définit l'environnements global, lexical et opérationnel et finit par
+interprêter le programme ILP et comparer ses résultats aux contenus des fichiers .result et .print. en faisant appel à 2 méthodes :
+checkResult(value) et checkPrinting(printing).
+
+*) JUnit4 :
+C'est le framework servant à exécuter des batteries de tests/tests unitaires dans les classes d'un programme java. Son utilisation consiste à placer des annotations
+juste avant les signatures des méthodes et des classes qu'on veut tester, les annotations servent à effectuer diverses choses.
+Lien vers un tutoriel JUnit4 : In progress...
+
+
+
+*) Pour tester les programmes ILP :
+Clic droit sur la classe InterpreterTest, Run As, JUnit Test. L'onglet ouvert par l'outil JUnit indique pour chaque programme ILP si ce dernier
+passe tous les tests ou s'il contient des erreurs. Il suffit de double-cliquer sur l'erreur pour accéder au code source de la méthode d'où
+elle provient.
+
+
+*) Les interfaces traitant les environnement se trouvent dans le paquage "com.paracamplus.ilp1.interpreter.interfaces"
+  ==> Les classes implémentant ces interfaces se trouvent dans le paquage "com.paracamplus.ilp1.interpreter" et "com.paracamplus.ilp1.interpreter.operator"
+
+*) Fonction primitive :
+Besoin d'une bibliothèque d'exécution.
+
+*) Fonction prédéfinie :
+Bas besoin d'aide car c'est déjà présent avant l'exécution.
+
+
+*) Pour ajouter une fonction sequence un nouveau paquage à été créé. L'IAST et l'AST correspondant ont également été créés afin d'implémenter les méthodes nécessaires au bon foncionnement
+de la nouvelle fonctionnalité.L'AST est ensuite utilisée dans le Factory et testée par la méthode processFile 
+
+*) Langage typé statiquement
+
+*) Langage typé dynamiquement 

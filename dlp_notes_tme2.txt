@@ -1,0 +1,39 @@
+XML-------------->DOM----------------->AST------------------>évaluer ou compiler selon l'objectif
+       Jing             PARSER(Factory)              
+
+Grammaire
+
+Savoir intervenir quand on veut introduire une chose.
+
+WholeTestSuite.java : Sert à effectuer tous les tests existants et compiler tous les sources du projet.
+InterpreterTest.java : Sert à exécuter les programmes ILP se trouvant dans le dossier Samples.
+Jing : Sert à valider un fichier XML par rapport aux schémas RelaxNG utilisés pour définir les grammaires de langages. (Clic droit fichier XML > menu ILP > Validate)
+
+L'outil Trang est utilisé pour transformer un fichier rnc (Grammaire compacte - Plus lisible par le dévloppeur) en fichier rnc (Grammaire xml - plus facile à lire par la machine).
+
+
+ATTENTION !!! TOUT METTRE DANS LE WORKSPACE POUR L'EXAMEN (Projets, Différentes Versions de ILP, PDFs, Notes, etc)
+
+
+************************************     Git     ************************************
+- git init : Créer un nouveau dépôt git dans le dossier du projet(Doit être le dossier courant).
+- git clone <url> : Cloner/Copier un dépôt Git sur notre machine.
+--------------------------------------------------------------------------------------------------
+- git diff : Voir concrètement les modifications apportées.
+- git diff <chemin_fichier> : Voir concrètement les modifications apportées au fichier dont on indique le chemin complet.
+--------------------------------------------------------------------------------------------------
+- git status : Voir la listes des fichiers modifiés, ajoutés, supprimés, etc.
+  Les fichiers modifiés seront coloriés en rouge. Cela signifie qu’ils ne seront pas pris en compte lorsqu'on faire un commit.
+--------------------------------------------------------------------------------------------------
+- git add -A | git add --all : Ajouter tous les changement (Modifications, suppressions, ajouts, etc.)
+  git add : équivalente à gitt add -A.
+  git add -u | git add --update : Ajouter seulement les modifications et les suppressions.
+  git add nomfichier1 nomfichier2 ... : Ajouter explicitement un ou plusieurs fichiers modifiés qu'on veut prendre en compte lors du prochain commit.
+--------------------------------------------------------------------------------------------------
+- git commit -a : Après avoir ajouté les fichiers modifiés, ces derniers seront colorés en vert si on tape "git status" une autre fois.
+                  git commit -a (-a == all) sert alors à commiter(Envoyer au serveur/Valider) les fichiers colorés en vert.
+
+- git commit nomfichier1 nomfichier2 ... : Sert à commiter une sélection de fichiers modifiés.
+  ===> ATTENTION : Après un commit, les changements seront dans le HEAD de la copie du dépôt local, c'est-à-dire encore sur la machine et pas sur le serveur Git.
+
+
